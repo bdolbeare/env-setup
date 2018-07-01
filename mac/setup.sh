@@ -4,6 +4,10 @@ brew cask install spectacle
 brew cask install virtualbox
 brew cask install vagrant
 
+brew install tmux
+gem install tmuxinator
+
+
 # get yarn as an alternative to npm
 brew install yarn
 
@@ -16,3 +20,5 @@ brew install most
 
 echo "Add this stuff to your .bashrc" 
 echo export PAGER=most
+echo source ~/.bin/tmuxinator.bash
+

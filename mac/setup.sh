@@ -1,5 +1,17 @@
 #!/bin/sh
 
+SCRIPT_DIR=$(cd "$(dirname "$0")"; pwd)
+
+echo $SCRIPT_DIR
+
+. ${SCRIPT_DIR}/common-functions.sh
+
+
+exit 1 
+
+brew install neovim
+brew install tree
+
 brew cask install spectacle
 brew cask install virtualbox
 brew cask install vagrant

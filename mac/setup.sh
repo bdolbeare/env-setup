@@ -1,36 +1,22 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-SCRIPT_DIR=$(cd "$(dirname "$0")"; pwd)
+cd "$(dirname "${BASH_SOURCE}")";
 
-echo $SCRIPT_DIR
+git pull origin master;
 
-. ${SCRIPT_DIR}/common-functions.sh
+function doIt() {
+    echo rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+        --exclude "README.md" --exclude "LICENSE" -avh --no-perms . ~;
+    echo source ~/.bash_profile;
+}
 
-
-exit 1 
-
-brew install neovim
-brew install tree
-
-brew cask install spectacle
-brew cask install virtualbox
-brew cask install vagrant
-
-brew install tmux
-gem install tmuxinator
-
-
-# get yarn as an alternative to npm
-brew install yarn
-
-# get a modern version of gradle
-brew update gradle
-
-
-# most is a better pager as it provides styling (e.g. run 'man ls' with most set as your pager)
-brew install most
-
-echo "Add this stuff to your .bashrc" 
-echo export PAGER=most
-echo source ~/.bin/tmuxinator.bash
-
+if [ "$1" == "--force" -o "$1" == "-f" ]; then
+    doIt;
+else
+    read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+    echo "";
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        doIt;
+    fi;
+fi;
+unset doIt;

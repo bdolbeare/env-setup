@@ -32,13 +32,14 @@ if [ "$1" == "--force" -o "$1" == "-f" ]; then
 else
 	echo 
 	sleep 2
+	FORCE=false
 fi
 
 for file in ${files[@]}; do
 	echo "-------------------------"
 	echo Working on file $file
 
-	if [ $FORCE ]; then
+	if $FORCE ; then
 		syncfile $file
 	else
 		# Show file diffs

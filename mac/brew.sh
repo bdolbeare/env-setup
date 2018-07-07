@@ -75,6 +75,7 @@ brew install vim --override-system-vi
 
 # Install other useful binaries.
 brew install ack
+brew install colordiff
 brew install dark-mode
 brew install git
 brew install git-lfs

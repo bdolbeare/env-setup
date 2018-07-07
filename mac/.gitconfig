@@ -96,6 +96,15 @@
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
     precomposeunicode = false
 
+    # Enable parallel I/O for operations like "git diff".
+    # See http://stackoverflow.com/q/18257622/276478
+	preloadindex = true
+
+	# Use 12 characters for the abbreviated commit hash. I can currently make
+	# do with 10, but this should provide a certain level of safety for the
+	# near-ish future. See the interesting and well-researched article at
+	# http://blog.cuviper.com/2013/11/10/how-short-can-git-abbreviate/
+	abbrev = 12
 [color]
 
     # Use colors in Git commands that are capable of colored output when
@@ -133,15 +142,20 @@
 
 [merge]
 
+		tool = vimdiff
+
+
     # Include summaries of merged commits in newly created merge commit messages
     log = true
 
 [push]
 
-    # Use the Git 1.x.x default to avoid errors on machines with old Git
-    # installations. To use `simple` instead, add this to your `~/.extra` file:
-    # `git config --global push.default simple`. See http://git.io/mMah-w.
-    default = matching
+	# Make "git push" or "git push <remote>" only push the current branch to
+	# the tracked branch (regardless of its remote name) as opposed to pushing
+	# all branches with a matching name on the remote. See "An asymmetry
+	# between git pull and push": http://longair.net/blog/?p=572
+	default = tracking
+
     # Make `git push` push relevant annotated tags when pushing branches out.
     followTags = true
 

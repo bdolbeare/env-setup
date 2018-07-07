@@ -16,6 +16,7 @@ files+=('.aliases')
 files+=('.functions')
 files+=('.inputrc')
 files+=('.gitconfig')
+files+=('.colordiffrc')
 
 BACKUPDIR=${HOME}/backups
 mkdir ${BACKUPDIR} > /dev/null 2>&1

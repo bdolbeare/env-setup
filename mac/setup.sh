@@ -17,6 +17,7 @@ files+=('.functions')
 files+=('.inputrc')
 files+=('.gitconfig')
 files+=('.colordiffrc')
+files+=('.vimrc')
 
 BACKUPDIR=${HOME}/backups
 mkdir ${BACKUPDIR} > /dev/null 2>&1

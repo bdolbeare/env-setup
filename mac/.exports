@@ -1,4 +1,4 @@
-# Make vim the default editor.
+# Make nvim the default editor.
 export EDITOR='nvim';
 
 # Enable persistent REPL history for `node`.
@@ -25,5 +25,5 @@ export MANPAGER='less -X';
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
 
-# Use most as pager so that man pages are colorized
-export PAGER=most
+# Use less as default pager 
+export PAGER=less

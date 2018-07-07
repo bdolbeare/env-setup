@@ -41,8 +41,6 @@ brew install gnu-tar --with-default-names
 brew install gnu-which --with-default-names
 brew install grep --with-default-names
 brew install openssh
-brew install screen
-brew install tmux
 brew install wget --with-iri
 
 # Install Bash 4.
@@ -67,8 +65,12 @@ brew install rbenv
 LINE='eval "$(rbenv init -)"'
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
+brew install screen
+brew install tmux
+gem install tmuxinator
+
 # Install more recent versions of some OS X tools.
-brew install nvim
+brew install neovim
 brew install vim --override-system-vi
 
 # Install other useful binaries.
@@ -80,7 +82,10 @@ brew install git-extras
 brew install p7zip
 brew install rename
 brew install speedtest_cli
+brew install most
 brew install tree
+brew install gradle
+brew install yarn
 
 # Core casks
 rew cask install --appdir="/Applications" alfred

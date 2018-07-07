@@ -1,3 +1,9 @@
+if !isdirectory($HOME . "/.vim/backups")
+    call mkdir($HOME . "/.vim/backups", "p", 0700)
+endif
+if !isdirectory($HOME . "/.vim/swaps")
+    call mkdir($HOME . "/.vim/swaps", "p", 0700)
+endif
 
 " Make Vim more useful
 set nocompatible

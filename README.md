@@ -1,6 +1,6 @@
 # env-setup
 
-<img src="https://cdn4.iconfinder.com/data/icons/others/512/1_laptop-settings-512.png" style="width:200px;"/>
+<img src="https://cdn.pixabay.com/photo/2012/05/04/10/57/gear-47203_960_720.png" width="128px"/>
 
 This project provides a set of setup scripts that I use to create a consistent development environment acrross the many devices I use at work and home.
 

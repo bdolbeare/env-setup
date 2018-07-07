@@ -18,6 +18,7 @@ files+=('.inputrc')
 files+=('.gitconfig')
 files+=('.colordiffrc')
 files+=('.vimrc')
+files+=('.tmux.conf')
 
 BACKUPDIR=${HOME}/backups
 mkdir ${BACKUPDIR} > /dev/null 2>&1

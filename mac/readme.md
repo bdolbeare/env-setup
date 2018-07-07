@@ -1,6 +1,6 @@
 # Macbook Setup
 
-![MacDown logo](http://macdown.uranusjr.com/static/images/logo-160.png)
+![Macbook Setup](http://macdown.uranusjr.com/static/images/logo-160.png)
 
 This project provides a set of scripts that can be used to configure a Macbook with a common set of applications, command-line-utilities, and system settings/preferences.
 

@@ -20,6 +20,7 @@ files+=('.colordiffrc')
 files+=('.vimrc')
 files+=('.tmux.conf')
 files+=('.bin')
+files+=('.tmuxinator')
 
 BACKUPDIR=${HOME}/backups
 mkdir ${BACKUPDIR} > /dev/null 2>&1

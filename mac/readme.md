@@ -31,3 +31,8 @@ Step 2:  Run the setup scripts:
 
 **setup.sh** run this command to copy configuration files (e.g. .bashrc, .aliases, .gitconfig, etc.) to your home directory [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup.sh)
 
+## Reference Links
+
+[The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read#config)<br>
+[tmuxinator](https://github.com/tmuxinator/tmuxinator)<br>
+[tmux cheat sheat](https://gist.github.com/MohamedAlaa/2961058)<br>

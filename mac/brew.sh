@@ -51,9 +51,10 @@ brew install bash-completion2
 # We installed the new shell, now we have to activate it
 echo "Adding the newly installed shell to the list of allowed shells"
 # Prompts for password
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
+LINE='/usr/local/bin/bash'
+grep -q "$LINE" /etc/shells || sudo bash -c "echo $LINE >> /etc/shells"
 # Change to the new shell, prompts for password
-chsh -s /usr/local/bin/bash
+echo "$SHELL" | grep -q $LINE || chsh -s /usr/local/bin/bash
 
 # Install Python
 brew install python
@@ -88,33 +89,35 @@ brew install tree
 brew install gradle
 brew install yarn
 
-# Core casks
-rew cask install --appdir="/Applications" alfred
-brew cask install --appdir="~/Applications" iterm2
-brew cask install --appdir="~/Applications" java
-brew cask install --appdir="/Applications" spectacle
-
-# Development tool casks
-brew cask install --appdir="/Applications" sublime-text
-brew cask install --appdir="/Applications" atom
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" macdown
-
-# Misc casks
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" evernote
-
 # Install Docker, which requires virtualbox
 brew install docker
 brew install boot2docker
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+if asktocontinue "Do you want to install cask applications?"; then 
+				# Core casks
+				brew cask install --appdir="/Applications" alfred
+				brew cask install --appdir="~/Applications" iterm2
+				brew cask install --appdir="~/Applications" java
+				brew cask install --appdir="/Applications" spectacle
+
+				# Development tool casks
+				brew cask install --appdir="/Applications" sublime-text
+				brew cask install --appdir="/Applications" atom
+				brew cask install --appdir="/Applications" virtualbox
+				brew cask install --appdir="/Applications" vagrant
+				brew cask install --appdir="/Applications" macdown
+
+				# Misc casks
+				brew cask install --appdir="/Applications" google-chrome
+				brew cask install --appdir="/Applications" firefox
+				brew cask install --appdir="/Applications" skype
+				brew cask install --appdir="/Applications" slack
+				brew cask install --appdir="/Applications" dropbox
+				brew cask install --appdir="/Applications" evernote
+fi
 
 # Remove outdated versions from the cellar.
 brew cleanup

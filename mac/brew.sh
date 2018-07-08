@@ -45,7 +45,6 @@ brew install wget --with-iri
 
 # Install Bash 4.
 brew install bash
-brew tap homebrew/versions
 brew install bash-completion2
 
 # We installed the new shell, now we have to activate it

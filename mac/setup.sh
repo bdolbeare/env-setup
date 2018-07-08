@@ -19,6 +19,7 @@ files+=('.gitconfig')
 files+=('.colordiffrc')
 files+=('.vimrc')
 files+=('.tmux.conf')
+files+=('.bin')
 
 BACKUPDIR=${HOME}/backups
 mkdir ${BACKUPDIR} > /dev/null 2>&1

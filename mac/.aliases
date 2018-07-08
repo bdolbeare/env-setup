@@ -82,3 +82,8 @@ if [ $? -eq 0 ]; then
 		git diff --no-index --color-words "$@";
 	}
 fi;
+
+
+function bashver() {
+ echo $BASH_VERSION
+}

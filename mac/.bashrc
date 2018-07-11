@@ -37,8 +37,19 @@ if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completio
     complete -o default -o nospace -F _git g;
 fi;
 
+# Add tab completion for tmuxinator
 if [ -f ~/.bin/tmuxinator.bash ]; then
 	source ~/.bin/tmuxinator.bash;
+fi
+
+# Add tab completion for docker-machine
+if [ -f ~/.bin/docker-machine.bash ]; then
+	source ~/.bin/docker-machine.bash;
+fi
+
+# Wrap docker-machine so we get docker-machine use
+if [ -f ~/.bin/docker-machine-wrapper.bash ]; then
+	source ~/.bin/docker-machine-wrapper.bash;
 fi
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards

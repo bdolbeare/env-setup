@@ -2,6 +2,7 @@
 
 # Common aliases
 alias ll='ls -l'
+
 alias lart='ls -lart' 
 alias g='git'
 alias j='jobs'

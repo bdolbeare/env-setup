@@ -67,6 +67,7 @@ grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 brew install screen
 brew install tmux
+brew install reattach-to-user-namespace
 gem install tmuxinator
 
 # Install more recent versions of some OS X tools.
@@ -91,6 +92,19 @@ brew install yarn
 # Install Docker, which requires virtualbox
 brew install docker
 brew install boot2docker
+
+base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/usr/local/bin/docker-machine &&
+chmod +x /usr/local/bin/docker-machine
+
+mkdir -p ~/.bin > /dev/null 2>&1
+base=https://raw.githubusercontent.com/docker/machine/v0.14.0
+for i in docker-machine-prompt.bash docker-machine-wrapper.bash docker-machine.bash
+do
+  wget --no-check-certificate -q "$base/contrib/completion/bash/${i}" -P ~/.bin
+done
+
+
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package

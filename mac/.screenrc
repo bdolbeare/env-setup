@@ -1,0 +1,50 @@
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+bindkey -k F1 prev        # F11
+bindkey -k F2 next        # F12
+bindkey -k k9 eval "copy" "stuff ^b"    # F9  (entry copy mode and scroll up) (shift page-up also works in copy mode) (search with vi-like / or ?)
+bindkey -k k; eval "copy" "stuff ^f"    # F10 (entry copy mode and scroll down) (shift page-down also works in copy mode) (search with vi-like / or ?)
+ 
+startup_message off
+ 
+# Normal scrollwhell functionality
+termcapinfo xterm* ti@:te@
+ 
+defscrollback 10000
+ 
+# Sets title bar and bottom window list
+hardstatus off
+ 
+caption always "%c %D %M %d |%-w%L>%{= BW}%n %t [%h]%{-}%52< %+w"
+# %c ==> time in 24H format
+# | ==> literal
+# %-w ==> print all windows to left of current window
+# %L> ==> start of truncation
+# %{= BW} change color to bright blue background "B" and bright white foreground "W"
+# %n ==> print current window number
+# %t ==> print current window title
+# [%h] ==> [ and ] are literals,  %h is the hardstatus line
+# %{-} ==> reset text fomrating
+# %52< ==> format the text to withing > nad < to 52 chars
+#
+# http://aperiodic.net/screen/man:string_escapes
+ 
+# From Stephen Shirley
+# Don't block command output if the terminal stops responding
+# (like if the ssh connection times out for example).
+nonblock on
+ 
+# Allow editors etc. to restore display on exit
+# rather than leaving existing text in place
+altscreen on
+ 
+# Enable 256-color mode when screen is started with TERM=xterm-256color
+# Taken from: http://frexx.de/xterm-256-notes/
+#
+# Note that TERM != "xterm-256color" within a screen window. Rather it is
+# "screen" or "screen-bce"
+#
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+ 
+vbell off

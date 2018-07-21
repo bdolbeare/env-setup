@@ -33,6 +33,7 @@ Step 2:  Run the setup scripts:
 
 ## Reference Links
 
-[The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read#config)<br>
-[tmuxinator](https://github.com/tmuxinator/tmuxinator)<br>
-[tmux cheat sheat](https://gist.github.com/MohamedAlaa/2961058)<br>
+[The Tao of tmux](https://leanpub.com/the-tao-of-tmux/read#config)</br>
+[tmuxinator](https://github.com/tmuxinator/tmuxinator)</br>
+[tmux cheat sheat](https://gist.github.com/MohamedAlaa/2961058)</br>
+[xpanes](https://github.com/greymd/tmux-xpanes)</br>

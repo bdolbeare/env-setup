@@ -68,6 +68,7 @@ grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 brew install screen
 brew install tmux
 brew install reattach-to-user-namespace
+brew install tmux-xpanes
 gem install tmuxinator
 
 # Install more recent versions of some OS X tools.

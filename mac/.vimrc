@@ -104,3 +104,9 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.md setlocal filetype=markdown
 endif
 
+
+set clipboard=unnamed
+
+
+"vmap <C-x> :!pbcopy<CR>  
+"map <C-c> :w !pbcopy<CR><CR> 

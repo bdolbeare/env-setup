@@ -1,0 +1,97 @@
+update
+upgrade
+
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+install coreutils
+install findutils 
+install gnu-sed 
+install gnu-tar 
+install gnu-which 
+install grep 
+install openssh
+install wget 
+
+# Install Bash 4.
+install bash
+install bash-completion2
+
+# Install Python
+install python
+install python3
+
+# Install ruby-build and rbenv
+install ruby-build
+install rbenv
+
+# Terminal Multiplexers
+install screen
+install tmux
+install reattach-to-user-namespace
+install tmux-xpanes
+install --user tmuxp
+gem install tmuxinator
+
+# Install more recent versions of some OS X tools.
+install neovim
+install vim 
+
+# Install other useful binaries.
+install ack
+install colordiff
+brew install dark-mode
+install git
+install git-lfs
+install git-extras
+install p7zip
+install rename
+install speedtest_cli
+install most
+install tree
+install gradle
+install yarn
+
+# Install Docker, which requires virtualbox
+install docker
+install boot2docker
+
+base=https://github.com/docker/machine/releases/download/v0.14.0 &&
+curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/usr/local/bin/docker-machine &&
+chmod +x /usr/local/bin/docker-machine
+
+mkdir -p ~/.bin > /dev/null 2>&1
+base=https://raw.githubusercontent.com/docker/machine/v0.14.0
+for i in docker-machine-prompt.bash docker-machine-wrapper.bash docker-machine.bash
+do
+  wget --no-check-certificate -q "$base/contrib/completion/bash/${i}" -P ~/.bin
+done
+
+
+
+# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+if asktocontinue "Do you want to install cask applications?"; then 
+				# Core casks
+				brew cask install --appdir="/Applications" alfred
+				brew cask install --appdir="~/Applications" iterm2
+				brew cask install --appdir="~/Applications" java
+				brew cask install --appdir="/Applications" spectacle
+
+				# Development tool casks
+				brew cask install --appdir="/Applications" sublime-text
+				brew cask install --appdir="/Applications" atom
+				brew cask install --appdir="/Applications" virtualbox
+				brew cask install --appdir="/Applications" vagrant
+				brew cask install --appdir="/Applications" macdown
+
+				# Misc casks
+				brew cask install --appdir="/Applications" google-chrome
+				brew cask install --appdir="/Applications" firefox
+				brew cask install --appdir="/Applications" skype
+				brew cask install --appdir="/Applications" slack
+				brew cask install --appdir="/Applications" dropbox
+				brew cask install --appdir="/Applications" evernote
+fi
+
+# Remove outdated versions from the cellar.
+cleanup

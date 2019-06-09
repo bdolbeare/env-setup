@@ -35,13 +35,13 @@ brew upgrade
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
-brew install findutils --with-default-names
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
-brew install grep --with-default-names
+brew install findutils 
+brew install gnu-sed 
+brew install gnu-tar 
+brew install gnu-which 
+brew install grep 
 brew install openssh
-brew install wget --with-iri
+brew install wget 
 
 # Install Bash 4.
 brew install bash
@@ -66,14 +66,17 @@ LINE='eval "$(rbenv init -)"'
 grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 
 brew install screen
-brew install tmux
+# tmux 2.9 doesn't do formatting the same way which breaks my styling
+#brew install tmux
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/c48bcf0cdcdd795efaf5c85200b889ef6471bb50/Formula/tmux.rb
 brew install reattach-to-user-namespace
 brew install tmux-xpanes
-gem install tmuxinator
+pip install --user tmuxp
+#gem install tmuxinator
 
 # Install more recent versions of some OS X tools.
 brew install neovim
-brew install vim --override-system-vi
+brew install vim 
 
 # Install other useful binaries.
 brew install ack

@@ -35,36 +35,37 @@ brew upgrade
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
 
-brew install findutils 
-brew install gnu-sed 
-brew install gnu-tar 
-brew install gnu-which 
-brew install grep 
+brew install findutils
+brew install gnu-sed
+brew install gnu-tar
+brew install gnu-which
+brew install grep
 brew install openssh
-brew install wget 
+brew install wget
 
 # Install Bash 4.
 brew install bash
 brew install bash-completion2
 
 # We installed the new shell, now we have to activate it
-echo "Adding the newly installed shell to the list of allowed shells"
-# Prompts for password
-LINE='/usr/local/bin/bash'
-grep -q "$LINE" /etc/shells || sudo bash -c "echo $LINE >> /etc/shells"
-# Change to the new shell, prompts for password
-# echo "$SHELL" | grep -q $LINE || chsh -s /usr/local/bin/bash
+if asktocontinue "Do you want to newly installed shell to the list of allowed shells?"; then
+	# Prompts for password
+    LINE='/usr/local/bin/bash'
+    grep -q "$LINE" /etc/shells || sudo bash -c "echo $LINE >> /etc/shells"
+    # Change to the new shell, prompts for password
+    # echo "$SHELL" | grep -q $LINE || chsh -s /usr/local/bin/bash
+fi
 
 # tmux 2.9 doesn't do formatting the same way which breaks my styling
 brew install tmux
 #brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/c48bcf0cdcdd795efaf5c85200b889ef6471bb50/Formula/tmux.rb
 brew install reattach-to-user-namespace
-brew install tmux-xpanes
-pip install --user tmuxp
+#brew install tmux-xpanes
+#pip install --user tmuxp
 
 # Install more recent versions of some OS X tools.
 brew install neovim
-brew install vim 
+brew install vim
 
 # Install other useful binaries.
 brew install ack
@@ -86,16 +87,20 @@ brew install maven
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
 # Install Docker
-brew install docker
-brew install --cask docker
+if asktocontinue "Do you want to install docker?"; then
+    brew install docker
+    brew install --cask docker
+fi
 
 # Install Java
-brew tap homebrew/cask-versions
-brew install --cask temurin
-brew install --cask temurin17
-brew install --cask temurin11
+if asktocontinue "Do you want to install Java?"; then
+    #brew tap homebrew/cask-versions
+    brew install --cask temurin
+    brew install --cask temurin17
+    brew install --cask temurin11
+fi
 
-if asktocontinue "Do you want to install cask applications?"; then 
+if asktocontinue "Do you want to install cask applications?"; then
   # Core casks
   #brew install --cask alfred
   brew install --cask iterm2

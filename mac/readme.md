@@ -18,15 +18,21 @@ git clone git@github.com:bdolbeare/env-setup.git
 Step 2:  Run the setup scripts:
 
 ```
-./mac/osx-setup.sh
-./mac/brew.sh
+./mac/setup-osx.sh
+./mac/setup-brew.sh
+./mac/setup-tmux.sh
+./mac/setup-powerline.sh
 ```
 
 ## Script Summary
 
-**osx-setup.sh** run this command to update the OS, install XCode, and to write system defaults which control OS and applications settings/preferences. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/osx-setup.sh)
+**setup-osx.sh** run this command to update the OS, install XCode, and to write system defaults which control OS and applications settings/preferences. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup-osx.sh)
 
-**brew.sh** run this command to install brew, upgrade any existing brew formulae, and install some common tools and applications. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/brew.sh)
+**setup-brew.sh** run this command to install brew, upgrade any existing brew formulae, and install some common tools and applications. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup-brew.sh)
+
+**setup-tmux.sh** run this command to configure tmux with some preferred plugins. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup-tmux.sh)
+
+**setup-powerline.sh** run this command to install the Powerline fonts which I like to use in tmux [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup-powerline.sh)
 
 ## Reference Links
 

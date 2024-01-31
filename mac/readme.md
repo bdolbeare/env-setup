@@ -24,6 +24,10 @@ Step 2:  Run the setup scripts:
 ./mac/setup-powerline.sh
 ```
 
+Step 3:  Configure iTerm2 for Powerline support:
+
+![iTerm2 Powerline Settings](./images/iterm2-settings.png)
+
 ## Script Summary
 
 **setup-osx.sh** run this command to update the OS, install XCode, and to write system defaults which control OS and applications settings/preferences. [view source](https://github.com/bdolbeare/env-setup/tree/master/mac/setup-osx.sh)
